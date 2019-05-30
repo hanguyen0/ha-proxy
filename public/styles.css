@@ -1,0 +1,15 @@
+#info-booking {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-left: 50px;
+    margin-right: 60px;
+}
+
+#airbnb_reviews {
+    margin-left: 7.5%;
+    /* padding-left: 1em; */
+}
+
+#moreHomes {
+    margin-left: -9.5%;
+}
