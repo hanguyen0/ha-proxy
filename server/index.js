@@ -19,7 +19,8 @@ app.use(express.static(__dirname + '/../public'));
 
 app.get('/listings/:id', (req, res) => {
     const { id} = req.params;
-    res.redirect(`http://localhost:3002/listings/${id}`);
+    //http://54.188.63.61:3002/
+    res.redirect(`http://54.188.63.61:3002/listings/${id}`);
 });
 
 // app.get('/room/:id', (req, res) => {
