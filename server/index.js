@@ -20,7 +20,9 @@ const room = `http://54.189.142.212/`,
 
 app.get('/api/:id', (req, res) => {
     const { id } = req.params;
-
+    if (id.toString().includes('/')) {
+        id = Number(id.slice(0, indexOf('/')));
+    }
     const promise1 = axios.get(`${room}booking?id=${id}`);
     const promise2 = axios.get(`${booking}room?id=${id}`);
     const promise3 = axios.get(`${listings}listings/${id}`);
