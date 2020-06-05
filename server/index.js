@@ -21,8 +21,8 @@ const room = `http://54.189.142.212/`,
 app.get('/api/:id', (req, res) => {
     const { id } = req.params;
 
-    const promise1 = axios.get(`${room}booking/?id=${id}`);
-    const promise2 = axios.get(`${booking}room/?id=${id}`);
+    const promise1 = axios.get(`${room}booking?id=${id}`);
+    const promise2 = axios.get(`${booking}room?id=${id}`);
     const promise3 = axios.get(`${listings}listings/${id}`);
     const promise4 = axios.get(`${photos}photos/${id}`);
 
@@ -38,12 +38,12 @@ app.get('/api/:id', (req, res) => {
 
 
 
-app.all('/room/*', (req, res) => {
+app.all('/room*', (req, res) => {
 // console.log('redirecting to booking service');
 apiProxy.web(req, res, {target: room});
 });
 
-app.all('/booking/*', (req, res) => {
+app.all('/booking*', (req, res) => {
 // console.log('redirecting to booking service');
 apiProxy.web(req, res, {target: booking});
 });
