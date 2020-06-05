@@ -9,10 +9,10 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use('/',express.static(path.join(__dirname, '../public')));
 
 
-app.get('/:id', (req, res) => {
+app.get('/api/:id', (req, res) => {
     const { id } = req.params;
     // console.log(id);
     let room = `http://54.189.142.212/booking/?id=${id}`,
