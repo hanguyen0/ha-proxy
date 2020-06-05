@@ -26,7 +26,7 @@ app.get('/:id', (req, res) => {
 
     Promise.all([promise1, promise2, promise3])
     .then((result) => {
-        console.log(result);
+        // console.log(result);
         res.send(result[0].data);
     })
     .catch((err) => {
